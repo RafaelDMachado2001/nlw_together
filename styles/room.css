@@ -1,5 +1,5 @@
 .content {
-    max-width: 90%;
+    max-width: min(112rem, 90%);
 }
 
 #room header {
@@ -69,8 +69,20 @@
 }
 
 #question-form form footer > div {
+    display: flex;
+    align-items: center;
     color: var(--icons-details);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1.4rem;
+}
+
+#question-form form footer > div img {
+    margin-right: 0.9rem;
+}
+
+#question-form form footer button {
+    height: auto;
+    padding: 0.8rem 2.4rem;
+    line-height: 2.4rem;
 }

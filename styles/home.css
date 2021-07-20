@@ -43,6 +43,11 @@ input {
     padding: 0 1.6rem;
 }
 
+input:focus {
+    outline: none;
+    border: .2rem solid var(--grey-blue);
+}
+
 input, button, .button {
     width: 100%;
     margin-bottom: 1.8rem;

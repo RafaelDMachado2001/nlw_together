@@ -38,8 +38,8 @@ body {
 body, button, input, textarea {
     font-size: clamp(14px, 1.6rem, 2vw);
 
-    font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Poppins', sans-serif;
 }
 
 .content {

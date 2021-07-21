@@ -24,7 +24,7 @@ html{
 
     --hover-blue: #5699FF;
     --hover-red: #EA4B65;
-    --hover-grey: #8794A7;
+    --hover-grey: #c9c9c9;
 
     font-size: 62.5%; /* 10px padrão para toda a página*/
 }
@@ -98,6 +98,33 @@ button.outlined,
     color: var(--blue);
     border: .2rem solid var(--blue);
 }
+
+button.red,
+.button.red {
+    background: var(--red);
+    color: var(--white);
+    transition: background .2s;
+}
+
+button.red:hover,
+.button.red:hover {
+    background: var(--hover-red);
+}
+
+button.grey,
+.button.grey {
+    background: var(--grey-light);
+    color: var(--grey-dark);
+    transition: background .2s;
+}
+
+button.grey:hover,
+.button.grey:hover {
+    background: var(--hover-grey);
+}
+
+
+/**** HEADER ****/
 
 .content header {
     width: 80%;

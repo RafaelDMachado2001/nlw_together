@@ -21,12 +21,31 @@
     font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
+    color: var(--black);
+}
+
+.modal-wrapper .modal p {
+    margin-bottom: 2.4rem;
+    color: var(--grey-dark);
+}
+
+.modal-wrapper .modal input {
+    margin-bottom: 4.0rem;
+    padding: 1.3rem 1.6rem;
+    border: .2rem solid var(--blue);
+    border-radius: 1rem;
+    outline: none;
+    width: min(70%, 30rem);
 }
 
 .modal-wrapper .modal .buttons {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.modal-wrapper .modal .buttons > .button {
+    margin-right: 1rem;
 }
 
 .modal-wrapper .modal .buttons > button,

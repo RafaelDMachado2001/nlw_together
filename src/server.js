@@ -5,8 +5,10 @@ const path = require('path')
 
 // Iniciando o servidor
 const server = express()
-
 server.set('view engine', 'ejs')
+
+// Configuração do servidor para utilizar a pasta 'public'
+server.use(express.static("public"))
 
 // .../nlw_together/src/views
 server.set('views', path.join(__dirname, 'views'))

@@ -1,0 +1,24 @@
+{
+  "name": "rocket_q",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para gerenciar perguntas anonimas de usuários direcionadas ao dono da página",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelDMachado2001/nlw_together.git"
+  },
+  "keywords": [],
+  "author": "Rafael Dorneles Machado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelDMachado2001/nlw_together/issues"
+  },
+  "homepage": "https://github.com/RafaelDMachado2001/nlw_together#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}

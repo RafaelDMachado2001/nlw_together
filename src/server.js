@@ -13,6 +13,8 @@ server.use(express.static("public"))
 // .../nlw_together/src/views
 server.set('views', path.join(__dirname, 'views'))
 
+server.use(express.urlencoded({extended: true}))
+
 // Indicando o uso da rota para o node
 server.use(route)
 

@@ -36,7 +36,7 @@ function handleClick(event, check = true) {
 
     // Monta a URL com os dados do formulário da modal para excluir ou marcar como lida a pergunta
     const form = document.querySelector(".modal form")
-    form.setAttribute("action", `/room/${roomId}/${questionId}/${slug}`)
+    form.setAttribute("action", `/question/${roomId}/${questionId}/${slug}`)
 
     modalTitle.innerHTML = `${text} esta pergunta`
     modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`

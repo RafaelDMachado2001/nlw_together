@@ -9,18 +9,29 @@ module.exports = {
         // 'Pega' a senha de administrador cadastrada para criar a sala
         const pass = req.body.password;
         let roomId;
-        // Laço que cria randômicamente um ID para a sala criada
-        for(var i = 0; i  < 6; i++){
-            i == 0 ? roomId = Math.floor(Math.random() * 10).toString() : roomId += Math.floor(Math.random() * 10).toString();
-        };
-        // Faz a inserção dos dados da sala dentro do BD
-        await db.run(`INSERT INTO rooms (
-            id,
-            pass
-        ) VALUES (
-            ${parseInt(roomId)},
-            ${pass}
-        )`);
+        let isRoom = true
+
+        while(isRoom){
+            // Laço que cria randômicamente o número para a sala criada
+                for(var i = 0; i  < 6; i++){
+                    i == 0 ? roomId = Math.floor(Math.random() * 10).toString() : roomId += Math.floor(Math.random() * 10).toString();
+                };
+
+            // Verifica se o número da sala já existe
+            const roomsExist = await db.all(`SELECT id FROM rooms`)
+            let isRoom = roomsExist.some(roomExistID => roomExist === roomId)
+            if(!isRoom){
+                // Faz a inserção da sala dentro do BD
+                await db.run(`INSERT INTO rooms (
+                    id,
+                    pass
+                ) VALUES (
+                    ${parseInt(roomId)},
+                    ${pass}
+                )`);    
+            }
+        }
+        
         // Fecha o banco de dados
         await db.close();
         // Redireciona o usuário para a sala com o ID criado

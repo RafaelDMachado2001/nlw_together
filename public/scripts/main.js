@@ -1,7 +1,8 @@
+// Importa a função 'Modal' de dentro do arquivo 'modal.js'
 import { Modal } from './modal.js'
 
-const modal = Modal()
-const modalTitle = document.querySelector('.modal h2')
+const modal = Modal();
+const modalTitle = document.querySelector('.modal h2');
 const modalDescription = document.querySelector('.modal p');
 const modalButton = document.querySelector('.modal button');
 
@@ -10,22 +11,22 @@ const checkButtons = document.querySelectorAll(".actions a.check");
 // Abre a modal
 checkButtons.forEach(button => {
     // Verifica os botões
-    button.addEventListener("click", handleClick)
+    button.addEventListener("click", handleClick);
 })
 
 // Pega todos os botões com a classe 'cancel'
-const cancelButton = document.querySelector(".button.cancel")
+const cancelButton = document.querySelector(".button.cancel");
 // Fecha a modal com o botão 'cancel'
 cancelButton.addEventListener("click", ()=> {
-    modal.close()
+    modal.close();
 })
 
 // Pega todos os botões com a classe 'delete'
-const deleteButton = document.querySelectorAll('.actions a.delete')
+const deleteButton = document.querySelectorAll('.actions a.delete');
 // Abre a modal clicando no botão 'Excluir' das perguntas
 deleteButton.forEach(button => {
-    button.addEventListener("click", (event) => handleClick(event, false))
-})
+    button.addEventListener("click", (event) => handleClick(event, false));
+});
 
 function handleClick(event, check = true) {
     event.preventDefault()

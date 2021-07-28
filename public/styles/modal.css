@@ -17,6 +17,7 @@
 }
 
 .modal-wrapper .modal {
+    /* ? Define o valor MÍNIMO que o elemento vai ocupar. Caso o valor mínimo seja ultrapassado, modifica o tamanho do elemento para 590px da página */
     width: min(90%, 59rem);
     background: var(--white);
     margin: auto;
@@ -43,6 +44,7 @@
     border: .2rem solid var(--blue);
     border-radius: 1rem;
     outline: none;
+    /* ? Define o valor MÍNIMO que o elemento vai ocupar. Caso o valor mínimo seja ultrapassado, modifica o tamanho do elemento para 300px da página */
     width: min(70%, 30rem);
 }
 

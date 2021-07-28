@@ -1,3 +1,5 @@
+// !-- Cria o banco de dados - Arquivo executado somente uma vez --! //
+
 const Database = require('./config');
 
 const initDb = {

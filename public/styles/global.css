@@ -38,7 +38,6 @@ body {
 body, button, input, textarea {
     font-size: clamp(14px, 1.6rem, 2vw);
 
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -47,6 +46,7 @@ body, button, input, textarea {
     margin: 0 auto;
 }
 
+/* ! Esta é uma classe para aplicar em elementos do HTML que não serão visíveis para o usuário mas existirão no código para facilitar o reconhecimento de ferramentas acessibilidade ! */
 .sr-only {
     position: absolute;
     height: 1px;

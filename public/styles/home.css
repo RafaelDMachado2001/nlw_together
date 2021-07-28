@@ -3,6 +3,7 @@
     grid-template-columns: 60% 40%;
     grid-template-rows: 11.4rem 1fr;
     
+    /* ? Define o layout da home page */
     grid-template-areas: 
     'header header'
     'left right'
@@ -20,6 +21,7 @@ header {
 }
 
 main {
+    /* ? 'Nomeia' este elemento como 'right' para poder ajustar a sua posição com o 'grid-template-areas' */
     grid-area: right;
 
     display: flex;
@@ -28,6 +30,7 @@ main {
 }
 
 main .container {
+    /* ? Define o valor MÍNIMO que o elemento vai ocupar. Caso o valor mínimo seja ultrapassado, modifica o tamanho do elemento para 100% da página */
     width: min(36.3rem, 100%);
 }
 

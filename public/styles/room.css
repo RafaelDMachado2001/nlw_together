@@ -1,4 +1,5 @@
 .content {
+    /* ? Define o valor MÍNIMO que o elemento vai ocupar. Caso o valor mínimo seja ultrapassado, modifica o tamanho do elemento para 90% da página */
     max-width: min(112rem, 90%);
 }
 
@@ -35,8 +36,8 @@
     height: 2rem;
 }
 
-/**** QUESTION FORM ****/
 
+/**** QUESTION FORM ****/
 #question-form h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
@@ -117,12 +118,12 @@
     margin-left: 1.6rem;
 }
 
-/* CENTRALIZANDO O PARÁGRAFO COM O ÍCONE DO USUÁRIO INDEPENDENTE DO TAMANHO DA QUANTIDADE DE LETRAS */
+/** CENTRALIZANDO O PARÁGRAFO COM O ÍCONE DO USUÁRIO INDEPENDENTE DO TAMANHO DA QUANTIDADE DE LETRAS **/
 .question-wrapper .question-content .question p {
     word-break: break-word;
     display: flex;
     align-items: center;
-    /* IMPORTANTE */
+    /* ! IMPORTANTE */
     min-height: 5.5rem;
 }
 
@@ -150,7 +151,7 @@
     margin-right: .5rem;
 }
 
-/* SELECIONA O SEGUNDO ELEMENTO a DA DIV */
+/* ? SELECIONA O SEGUNDO ELEMENTO a DA DIV */
 .question-wrapper .actions > a + a {
     margin-left: 2.4rem;
 }
@@ -181,6 +182,7 @@
     color: var(--black);
 }
 
+/* ?-- SELECIONA O SEGUNDO ELEMENTO p DA DIV --? */
 .no-questions p + p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.4rem;

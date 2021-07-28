@@ -1,4 +1,4 @@
-// Importa a função 'Modal' de dentro do arquivo 'modal.js'
+// ?-- Importa a função 'Modal' de dentro do arquivo 'modal.js' --? //
 import { Modal } from './modal.js'
 
 const modal = Modal();
@@ -6,10 +6,10 @@ const modalTitle = document.querySelector('.modal h2');
 const modalDescription = document.querySelector('.modal p');
 const modalButton = document.querySelector('.modal button');
 
-// Pega todos os botões com a classe 'check'
+// ?-- Pega todos os botões com a classe 'check' --? //
 const checkButtons = document.querySelectorAll(".actions a.check");
-// Abre a modal
-checkButtons.forEach(button => {
+
+checkButtons.forEach(button => { // ?-- Abre a modal --? //
     // Verifica os botões
     button.addEventListener("click", handleClick);
 })
@@ -29,13 +29,14 @@ deleteButton.forEach(button => {
 });
 
 function handleClick(event, check = true) {
+    // ?-- Antes de abrir a modal, verifica qual botão foi clicado --? //
     event.preventDefault()
     const text = check ? "Marcar como lida" : "Excluir"
     const slug = check ? "check" : "delete"
     const roomId = document.querySelector("#room-id").dataset.id
     const questionId = event.target.dataset.id
 
-    // Monta a URL com os dados do formulário da modal para excluir ou marcar como lida a pergunta
+    // Monta a URL com os dados do formulário da modal para excluir ou marcar a pergunta como lida //
     const form = document.querySelector(".modal form")
     form.setAttribute("action", `/question/${roomId}/${questionId}/${slug}`)
 
@@ -44,6 +45,6 @@ function handleClick(event, check = true) {
     modalButton.innerHTML = `Sim, ${text.toLowerCase()}`
     check ? modalButton.classList.remove("red") : modalButton.classList.add("red")
 
-    // Abrir modal
+    // ! Abre a modal //
     modal.open()
 }

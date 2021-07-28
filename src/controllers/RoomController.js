@@ -18,8 +18,9 @@ module.exports = {
                 };
 
             // Verifica se o número da sala já existe
-            const roomsExist = await db.all(`SELECT id FROM rooms`)
-            let isRoom = roomsExist.some(roomExistID => roomExist === roomId)
+            const roomsExistIds = await db.all(`SELECT id FROM rooms`)
+            isRoom = roomsExistIds.some(roomExistId => roomExistId === roomId)
+            
             if(!isRoom){
                 // Faz a inserção da sala dentro do BD
                 await db.run(`INSERT INTO rooms (
@@ -36,5 +37,33 @@ module.exports = {
         await db.close();
         // Redireciona o usuário para a sala com o ID criado
         res.redirect(`/room/${roomId}`);
+    }, 
+
+    // Função para criar a sala com o ID dinâmico
+    async open(req, res){
+        const db = await Database();
+        // Coleta o número da sala pela URL
+        const roomId = req.params.room
+        const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 0`)
+        const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 1`)
+        let isNoQuestions
+        if(questions.length == 0){
+            if(questionsRead.length == 0){
+                isNoQuestions = true
+            }
+        }
+
+        db.close()
+        // Renderiza a sala já com o número dinâmico criado
+        res.render("room", {roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions})
+    },
+
+    // Função para entrar em uma sala já criada
+    enter(req, res) {
+        const roomId = req.body.roomId
+
+        // Redireciona o usuário para a página existente
+        res.redirect(`/room/${roomId}`)
     }
-};
+
+}

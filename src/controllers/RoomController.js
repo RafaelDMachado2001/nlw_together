@@ -27,7 +27,7 @@ module.exports = {
                     id,
                     pass
                 ) VALUES (
-                    ${parseInt(roomId)},
+                    "${parseInt(roomId)}",
                     "${pass}"
                 )`);    
             }
@@ -63,7 +63,7 @@ module.exports = {
         const roomId = req.body.roomId
 
         // ?-- Redireciona o usuário para a página existente --? //
-        res.redirect(`/room/${roomId}`)
+        res.redirect(`/room/${roomId}`);
     }
 
 }

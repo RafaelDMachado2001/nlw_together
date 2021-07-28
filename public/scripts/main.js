@@ -5,6 +5,7 @@ const modal = Modal();
 const modalTitle = document.querySelector('.modal h2');
 const modalDescription = document.querySelector('.modal p');
 const modalButton = document.querySelector('.modal button');
+const copyId = document.querySelector('.button.copy');
 
 // ?-- Pega todos os botões com a classe 'check' --? //
 const checkButtons = document.querySelectorAll(".actions a.check");
@@ -48,3 +49,11 @@ function handleClick(event, check = true) {
     // ! Abre a modal //
     modal.open()
 }
+
+copyId.addEventListener("click", (event)=> {
+    const roomCode = document.querySelector('.copy .roomCode')
+    event.preventDefault()
+    navigator.clipboard.writeText(roomCode.textContent)
+
+    alert('Código da sala copiado')
+})

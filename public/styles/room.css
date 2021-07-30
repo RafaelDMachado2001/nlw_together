@@ -36,6 +36,11 @@
     height: 2rem;
 }
 
+#room header .buttons .button:nth-child(3) {
+    padding: 0 1.2rem;
+    margin-left: .8rem;
+}
+
 
 /**** QUESTION FORM ****/
 #question-form h2 {
